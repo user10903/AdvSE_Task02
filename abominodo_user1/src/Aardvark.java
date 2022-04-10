@@ -159,11 +159,7 @@ public class Aardvark {
   }
 
   private void rotateDominoes() {
-    // for (Domino d : dominoes) {
-    // if (Math.random() > 0.5) {
-    // System.out.println("rotating " + d);
-    // }
-    // }
+
     for (int x = 0; x < 7; x++) {
       for (int y = 0; y < 6; y++) {
 
@@ -296,10 +292,10 @@ public class Aardvark {
       System.out.println(h1);
       System.out.println(u1);
       System.out.println("1) Play");
-      // System.out.println("1) Single player play");
+
       System.out.println("2) View high scores");
       System.out.println("3) View rules");
-      // System.out.println("4) Multiplayer play");
+
       System.out.println("0) Quit");
 
       _$_ = -9;
@@ -346,7 +342,7 @@ public class Aardvark {
           shuffleDominoesOrder();
           placeDominoes();
           collateGrid();
-          // printGrid();
+      
           break;
         case 2:
           generateDominoes();
@@ -354,7 +350,7 @@ public class Aardvark {
           placeDominoes();
           rotateDominoes();
           collateGrid();
-          // printGrid();
+       
           break;
         default:
           generateDominoes();
