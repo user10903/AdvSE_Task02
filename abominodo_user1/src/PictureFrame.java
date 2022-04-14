@@ -10,14 +10,16 @@ public class PictureFrame {
 
   public void PictureFrame(Aardvark sf) {
     master = sf;
-    if (dp == null) {
+    if (dp != null){
+    	return;
+    }
       JFrame f = new JFrame("Abominodo");
       dp = new DominoPanel();
       f.setContentPane(dp);
       f.pack();
       f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
       f.setVisible(true);
-    }
+    
   }
 
   public void reset() {
@@ -58,7 +60,9 @@ public class PictureFrame {
     }
 
     public void drawDomino(Graphics g, Domino d) {
-      if (d.placed) {
+    	if (!(d.placed)){
+    		return;
+    	}
         int y = Math.min(d.ly, d.hy);
         int x = Math.min(d.lx, d.hx);
         int w = Math.abs(d.lx - d.hx) + 1;
@@ -71,7 +75,7 @@ public class PictureFrame {
             Color.BLUE);
         drawDigitGivenCentre(g, 30 + d.lx * 20, 30 + d.ly * 20, 20, d.low,
             Color.BLUE);
-      }
+      
     }
 
     void drawDigitGivenCentre(Graphics g, int x, int y, int diameter, int n) {
@@ -115,12 +119,13 @@ public class PictureFrame {
         drawGrid(g);
         master.drawGuesses(g);
       }
-      if (master.mode == 0) {
+      if (master.mode != 0) {
+    	  return;
+      }
         drawGridLines(g);
         drawHeadings(g);
         drawGrid(g);
         master.drawDominoes(g);
-      }
     }
 
     public Dimension getPreferredSize() {
