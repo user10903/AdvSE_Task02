@@ -50,8 +50,6 @@ public class Aardvark {
   private void generateGuesses() {
     _g = new LinkedList<Domino>();
     int count = 0;
-    int x = 0;
-    int y = 0;
     for (int l = 0; l <= 6; l++) {
       for (int h = l; h <= 6; h++) {
         Domino d = new Domino(h, l);
@@ -750,7 +748,6 @@ public class Aardvark {
           System.out.println("Creating new score table");
           try {
             PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true));
-            String n = playerName.replaceAll(",", "_");
             pw.print("Hugh Jass");
             pw.print(",");
             pw.print(1500);
