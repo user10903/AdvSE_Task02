@@ -24,7 +24,7 @@ public class Aardvark {
   PictureFrame pf = new PictureFrame();
 
   private void generateDominoes() {
-    _d = new LinkedList<Domino>();
+    _d = new LinkedList<>();
     int count = 0;
     int x = 0;
     int y = 0;
