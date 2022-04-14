@@ -2,6 +2,10 @@ import java.io.*;
 import java.net.*;
 
 public final class IOLibrary {
+private IOLibrary() {
+	throw new IllegalStateException("Utility Class");
+	}
+
   public static String getString() {
     BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
     do {
