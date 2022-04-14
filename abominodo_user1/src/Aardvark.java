@@ -117,17 +117,21 @@ public class Aardvark {
     return 11;
   }
 
-  private void shuffleDominoesOrder() {
-    List<Domino> shuffled = new LinkedList<Domino>();
-
+private void shuffleDominoesOrder() {
+	List<Domino> shuffled = shuffled();
+    _d = shuffled;
+}
+  
+private List<Domino> shuffled(){
+	List<Domino> shuffled = new LinkedList<Domino>();
     while (_d.size() > 0) {
-      int n = (int) (Math.random() * _d.size());
-      shuffled.add(_d.get(n));
-      _d.remove(n);
+    	int n = (int) (Math.random() * _d.size());
+    	shuffled.add(_d.get(n));
+    	_d.remove(n);
     }
 
-    _d = shuffled;
-  }
+    return shuffled;
+}
 
   private void invertSomeDominoes() {
     for (Domino d : _d) {
