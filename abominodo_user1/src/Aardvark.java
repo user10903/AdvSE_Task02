@@ -48,7 +48,7 @@ public class Aardvark {
   }
 
   private void generateGuesses() {
-    _g = new LinkedList<Domino>();
+    _g = new LinkedList<>();
     int count = 0;
     for (int l = 0; l <= 6; l++) {
       for (int h = l; h <= 6; h++) {
@@ -89,7 +89,7 @@ public class Aardvark {
     }
   }
 
-  int pg() {
+  int printGuess() {
     for (int are = 0; are < 7; are++) {
       for (int see = 0; see < 8; see++) {
         if (grid[are][see] != 9) {
@@ -123,7 +123,7 @@ private void shuffleDominoesOrder() {
 }
   
 private List<Domino> shuffled(){
-	List<Domino> shuffled = new LinkedList<Domino>();
+	List<Domino> shuffled = new LinkedList<>();
     while (_d.size() > 0) {
     	int n = (int) (Math.random() * _d.size());
     	shuffled.add(_d.get(n));
@@ -365,7 +365,7 @@ private List<Domino> shuffled(){
           collateGrid();
           break;
         }
-        pg();
+        printGuess();
         generateGuesses();
         collateGuessGrid();
         mode = 1;
@@ -407,7 +407,7 @@ private List<Domino> shuffled(){
 
             break;
           case 1:
-            pg();
+        	  printGuess();
             break;
           case 2:
             printGuessGrid();
@@ -719,7 +719,7 @@ private List<Domino> shuffled(){
 
         }
         mode = 0;
-        pg();
+        printGuess();
         pf.dp.repaint();
         long now = System.currentTimeMillis();
         try {
